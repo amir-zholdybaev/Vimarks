@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Vimarks</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="build/css/style.css">
+	<!-- <meta name="robots" content="noindex, nofollow" /> -->
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+</head>
+<body> 
+    <main class="wrapper">
+        
+        <div class="bookmarks">
+            <div class="bookmarks__row">
+                <!-- <div class="bookmarks__column" draggable="true">
+                    <div class="bookmarks__item">
+                        <a class="bookmarks__link" href="https://www.youtube.com/" onclick="event.stopPropagation()" draggable="false">
+                            <img class="bookmarks__img" src="build/img/youtube.jpg" alt="" draggable="false">
+                        </a>
+                    </div>
+                    <h2 class="bookmarks__title">Добавить сайт</h2>
+                </div> -->
+            </div>
+        </div>
+        
+        <div class="open-folder-popup">
+            <div class="open-folder tabs">
+              <div class="tabs__nav tabs-nav">
+                  <!-- <div class="tabs-nav__item active" data-tab-name="0">Tab 0</div>
+                  <div class="tabs-nav__item" data-tab-name="1">Tab 1</div> -->
+              </div>
+              <div class="tabs__content">
+                  <!-- <div class="tabs__tab active">
+                      <div class="bookmarks__row" data-folder-id="0">Row 0</div>
+                  </div>
+                  <div class="tabs__tab">
+                      <div class="bookmarks__row" data-folder-id="1">Row 1</div>
+                  </div> -->
+              </div>
+          </div>
+        </div>
+    </main>
+    <div class="popup" id="add-link-popup">
+        <h2 class="popup__title">Добавление Сайта</h2>
+        <form class="popup__form" action="">
+            <div class="popup__url">
+                <label class="popup__label" for="add-link-url">URL</label>
+                <input class="popup__input" type="text" autocomplete="off" id="add-link-url">
+            </div>
+            <div class="popup__title">
+                <label class="popup__label" for="add-link-title">Заголовок</label>
+                <input class="popup__input" type="text" autocomplete="off" id="add-link-title">
+            </div>
+            <div class="popup__buttons">
+                <button class=" popup__btn" type="button" id="add-link-close"><span>Отмена</span></button>
+                <button class=" popup__btn" type="button" id="add-link-save"><span>Сохранить</span></button>
+            </div>
+        </form>
+    </div>
+    <div class="edit-menu">
+        <button class="edit-menu__btn" id="edit"><span>Редактировать</span></button>
+        <button class="edit-menu__btn" id="update"><span>Обновить миниатюру</span></button>
+        <input class="edit-menu__file-input" type="file" id="file">
+        <button class="edit-menu__btn" id="download"><span>Загрузить с компьютера</span></button>
+        <button class="edit-menu__btn" id="delete"><span>Удалить</span></button>
+    </div>
+    <div class="popup" id="edit-popup">
+        <h2 class="popup__title">Редактировать закладку</h2>
+        <form class="popup__form" action="">
+            <div class="popup__url" id="edit-url">
+                <label class="popup__label" for="edit-url">URL</label>
+                <input class="popup__input" type="text" autocomplete="off" id="edit-url-input">
+            </div>
+            <div class="popup__title" id="edit-title">
+                <label class="popup__label" for="edit-title">Заголовок</label>
+                <input class="popup__input" type="text" autocomplete="off" id="edit-title-input">
+            </div>
+            <div class="popup__buttons">
+                <button class="popup__btn" type="button" id="edit-close"><span>Отмена</span></button>
+                <button class="popup__btn" type="button" id="edit-save"><span>Сохранить</span></button>
+            </div>
+        </form>
+    </div>
+    <script src="build/js/main.js"></script>
+</body>
+</html>

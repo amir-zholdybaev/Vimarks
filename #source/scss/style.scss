@@ -1,0 +1,65 @@
+// МИКСИНЫ =====================================================================================
+// font-size: calc(22px + 20 * (100vw / 1170));
+@mixin font-face($family, $type, $weight, $style) {
+	@font-face {
+		font-family: $family;
+		src: url('../fonts/'+ $type + '.eot');
+		src: local('☺'), url('../fonts/'+ $type + '.woff') format('woff'), url('../fonts/'+ $type + '.ttf') format('truetype'), url('../fonts/'+ $type + '.svg') format('svg');
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+@mixin adaptive-value($property, $startSize, $finalSize, $startWidth, $finalWidth) {
+	@media(max-width: #{$startWidth}px) {
+		#{$property}: calc(#{$finalSize}px + (#{$startSize} - #{$finalSize}) * ((100vw - #{$finalWidth}px) / (#{$startWidth} - #{$finalWidth})));
+	}
+}
+// ПОДКЛЮЧЕНИЕ ШРИФТОВ =========================================================================
+// @include font-face('Titillium Web', 'TitilliumWeb-Regular', normal, normal);
+// @include font-face('Titillium Web', 'TitilliumWeb-Bold', bold, bold);
+// @include font-face('Titillium Web', 'TitilliumWeb-Italic', normal, italic);
+// @include font-face('Titillium Web', 'TitilliumWeb-Light', 300, 300);
+// @include font-face('Titillium Web', 'TitilliumWeb-SemiBold', 600, 600);
+// ШРИФТ ПО УМОЛЧАНИЮ ==========================================================================
+$fontFamily:"monospace";
+// ПЕРЕМЕННЫЕ ДЛЯ АДАПТИВА =====================================================================
+$mw:100%;
+$md1:$mw+12;
+$md2:993; //992.98
+$md3:768; //767.98
+$md4:480; //479.98
+$minWidth:320px;
+// ОБНУЛЕНИЕ CSS ДЛЯ ВСЕХ БРАУЗЕРОВ ============================================================
+*{padding: 0px;margin: 0px;border: 0px;}
+*,*:before,*:after{box-sizing: border-box;} 
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+aside,nav,footer,header,section{display: block;}
+html,body{height: 100%;margin: 0;padding: 0;min-width: $minWidth;position: relative;width: 100%;color: #000;}
+body{font-size: 100%;line-height: 1;font-size: 14px;font-family: $fontFamily;-ms-text-size-adjust: 100%;-moz-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}
+input,button,textarea{font-family: $fontFamily;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
+// ОБОЛОЧКА - .WRAPPER =========================================================================
+.wrapper{position: relative;width: 100%;min-height: 100%;overflow: hidden;}
+// КОНТЭЙНЕР - .CONTAINER ======================================================================
+.container{
+	max-width:$mw+px;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0px 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+// ПОДКЛЮЧЕНИЕ SCSS ФАЙЛОВ =====================================================================
+@import "header.scss";
+@import "index.scss";
+@import "reused.scss";
+@import "lib.scss";
+@import "footer.scss";
