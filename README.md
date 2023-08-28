@@ -1,2 +1,2 @@
 # Vimarks
-Visual bookmarks for Google Chrome browser. Same as in the Opera browser, but you can drag and drop folders into folders
+Visual bookmarks for the Google Chrome browser. The same as in the Opera browser, but you can put folders in folders
